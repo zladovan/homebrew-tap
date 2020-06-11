@@ -2,16 +2,16 @@
 class Gorched < Formula
   desc "Terminal based game inspired by \"The Mother of all games\" Scorched Earth"
   homepage "https://github.com/zladovan/gorched"
-  version "1.3"
+  version "1.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/zladovan/gorched/releases/download/v1.3/gorched_1.3_Darwin_x86_64.tar.gz"
-    sha256 "d0e8d0780e5f9ecbc94a7d7e5395f9aea9060b2c11ecc9c733eeca74b3ed06c5"
+    url "https://github.com/zladovan/gorched/releases/download/v1.4/gorched_1.4_Darwin_x86_64.tar.gz"
+    sha256 "380a60d74d81a95b24b3cc23b8449aa11a0dd9f1e380ccdf4a5c524490e9bff3"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/zladovan/gorched/releases/download/v1.3/gorched_1.3_Linux_x86_64.tar.gz"
-      sha256 "3576f243dd1ea06b31db3c3c9ccfe66e4511c1a8d777394dd3af6d00a325f925"
+      url "https://github.com/zladovan/gorched/releases/download/v1.4/gorched_1.4_Linux_x86_64.tar.gz"
+      sha256 "52ec65b90d9d2ccbc9133b3c2dffc53705e888f2c1703820d4ebfbe1c540aedb"
     end
   end
 
