@@ -13,29 +13,28 @@ cask "gorched" do
   on_macos do
     on_intel do
       url "https://github.com/zladovan/gorched/releases/download/v1.7/gorched_1.7_darwin_amd64.tar.gz"
-      sha256 "f8fcb7d5310371fedd7037e86d107b19294278c0ba20978216d7d908c9f92ba4"
+      sha256 "41312a12f351d37420d5843a9d44928282b324a10824f0b6c47a7df00f3f5ad5"
     end
     on_arm do
       url "https://github.com/zladovan/gorched/releases/download/v1.7/gorched_1.7_darwin_arm64.tar.gz"
-      sha256 "059228809782a9d59723418daf6a8282b8ba7fe9ab521992878c1309009d48c0"
+      sha256 "69c83fd89f7b9f9bc362efa8eabba5318201e6bd039f5e3d67d02f8896036761"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/zladovan/gorched/releases/download/v1.7/gorched_1.7_linux_amd64.tar.gz"
-      sha256 "fe23f42cee8b2b51a038b0524c770d88323bf77237db1e45881ce36f403550b0"
+      sha256 "4c8f296b72b13ff7934a349ff569c3358d4e15938784bb2568da2c60d3318ce1"
     end
     on_arm do
       url "https://github.com/zladovan/gorched/releases/download/v1.7/gorched_1.7_linux_arm64.tar.gz"
-      sha256 "344182c26f81ec8d0528b4a4c0c184e5353ef51396b61b13251ddce107df9e2b"
+      sha256 "4108ce53e7e9e49ac78d45639eb87812606b0ccf5cc74cce2b10ea758b9b5bb1"
     end
   end
 
   postflight do
     if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-      # replace 'foo' with the actual binary name
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/foo"]
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/gorched"]
     end
   end
 
